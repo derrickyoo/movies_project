@@ -1,0 +1,38 @@
+[
+  {
+    "model": "movies.movie",
+    "pk": "4e419570-f512-11ea-92c4-d47bb0e6506f",
+    "fields": {
+      "title": "Dune",
+      "slug": "dune",
+      "genre": "adventure",
+      "year": "2020",
+      "created": "2020-09-12T08:58:39.120Z",
+      "modified": "2020-09-12T08:58:39.121Z"
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": "61b2b80f-f512-11ea-844b-d47bb0e6506f",
+    "fields": {
+      "title": "The Matrix",
+      "slug": "the-matrix",
+      "genre": "sci-fi",
+      "year": "1999",
+      "created": "2020-09-12T08:58:39.121Z",
+      "modified": "2020-09-12T08:58:39.121Z"
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": "6f8d547a-f512-11ea-afb9-d47bb0e6506f",
+    "fields": {
+      "title": "Inception",
+      "slug": "inception",
+      "genre": "action",
+      "year": "2010",
+      "created": "2020-09-12T08:58:39.128Z",
+      "modified": "2020-09-12T08:58:39.129Z"
+    }
+  }
+]
