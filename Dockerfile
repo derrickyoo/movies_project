@@ -1,20 +1,27 @@
-# Pull official base image
+# pull official base image
 FROM python:3.8.5-alpine
 
-# Set work directory
-WORKDIR /app
+# set work directory
+WORKDIR /usr/src/app
 
-# Set environment variables
+# set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Install psycopg2 dependencies
+# install psycopg2 dependencies
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
 
-# Install dependencies
-COPY Pipfile Pipfile.lock /app/
+# install dependencies
+COPY Pipfile Pipfile.lock /usr/src/app/
 RUN pip install pipenv && pipenv install --system
 
-# Copy project
-COPY . /app/
+# copy entrypoint.sh
+COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh
+
+# copy project
+COPY . /usr/src/app/
+
+# run entrypoint.sh
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
